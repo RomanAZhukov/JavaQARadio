@@ -3,7 +3,7 @@ package ru.netology.radio;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-class RadioTest {
+public class RadioTest {
 
     Radio radio = new Radio();
 
@@ -18,7 +18,7 @@ class RadioTest {
     }
 
     @Test
-   public void shouldSetStationUnderMinStation() {
+    public void shouldSetStationUnderMinStation() {
         radio.setCurrentStation(-1);
         int expected = 0;
         int actual = radio.getCurrentStation();
@@ -27,7 +27,7 @@ class RadioTest {
     }
 
     @Test
-   public void shouldSetStationOverMaxStation() {
+    public void shouldSetStationOverMaxStation() {
         radio.setCurrentStation(10);
         int expected = 0;
         int actual = radio.getCurrentStation();
@@ -46,7 +46,7 @@ class RadioTest {
     }
 
     @Test
-   public void shouldOverMaxStation1() {
+    public void shouldOverMaxStation1() {
         radio.setCurrentStation(9);
         radio.nextStation();
         int expected = 0;
@@ -66,7 +66,7 @@ class RadioTest {
     }
 
     @Test
-   public void shouldPrevStation() {
+    public void shouldPrevStation() {
         radio.setCurrentStation(4);
         radio.previousStation();
         int expected = 3;
@@ -76,7 +76,7 @@ class RadioTest {
     }
 
     @Test
-   public void shouldBelowMinStation1() {
+    public void shouldBelowMinStation1() {
         radio.setCurrentStation(0);
         radio.previousStation();
         int expected = 9;
@@ -157,7 +157,7 @@ class RadioTest {
     }
 
     @Test
-   public void shouldBelowMinVolume2() {
+    public void shouldBelowMinVolume2() {
         radio.setCurrentVolume(-1);
         radio.decreaseVolume();
         int expected = 0;
