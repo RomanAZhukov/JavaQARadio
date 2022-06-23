@@ -8,12 +8,12 @@ public class RadioTest {
     Radio radio = new Radio();
 
     @Test
-    public void shouldRangStation() {
+    public void shouldQuantityStation() {
 
-        radio = new Radio(5, 3);
+        radio = new Radio(100);
 
-        Assertions.assertEquals(5, radio.getMaxStation());
-        Assertions.assertEquals(3, radio.getMixStation());
+        Assertions.assertEquals(100, radio.getMaxStation());
+
     }
 
     @Test
