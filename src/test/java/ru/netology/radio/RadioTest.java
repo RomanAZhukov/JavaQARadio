@@ -8,6 +8,15 @@ public class RadioTest {
     Radio radio = new Radio();
 
     @Test
+    public void shouldRangStation() {
+
+        radio = new Radio(5, 3);
+
+        Assertions.assertEquals(5, radio.getMaxStation());
+        Assertions.assertEquals(3, radio.getMixStation());
+    }
+
+    @Test
     public void shouldChangeStation() {
 
         radio.setCurrentStation(5);
@@ -117,9 +126,9 @@ public class RadioTest {
 
     @Test
     public void shouldOverMaxVolume1() {
-        radio.setCurrentVolume(10);
+        radio.setCurrentVolume(100);
         radio.increaseVolume();
-        int expected = 10;
+        int expected = 100;
         int actual = radio.getCurrentVolume();
 
         Assertions.assertEquals(expected, actual);
@@ -127,7 +136,7 @@ public class RadioTest {
 
     @Test
     public void shouldOverMaxVolume2() {
-        radio.setCurrentVolume(11);
+        radio.setCurrentVolume(101);
         radio.increaseVolume();
         int expected = 1;
         int actual = radio.getCurrentVolume();
@@ -165,5 +174,4 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
-
 }
